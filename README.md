@@ -2,7 +2,8 @@
 
 Team Members:Shreya Sajal,Vineet Agarwal,Saman Ghous,Siddharth Shankar Pandey,Rishika Patwa
 
-Project-Deployment: https://predictin-deployment.herokuapp.com/
+Project-Deployment: https://predictin-deployment.herokuapp.com/![Screenshot from 2021-07-16 18-59-26](https://user-images.githubusercontent.com/62466836/125956119-d3a90e30-2066-415e-b1e5-89963969b8b7.png)
+
 
 ## Aim:
 Often important linkedin posts by organizations don’t get the required reach due to poor post designing or use of inaccurate community hashtags.Our project, PredictIn aims at solving this problem by predicting reach i.e total impressions in linkedin community for a post beforehand and help the organizations in designing posts in an effective way that maximizes their reach .
