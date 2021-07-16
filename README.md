@@ -1,26 +1,25 @@
-![Screenshot (110)](https://user-images.githubusercontent.com/58565264/119225748-5d63c080-bb23-11eb-9bc3-a6775ed13e5b.png)
 ![Screenshot (110)](https://user-images.githubusercontent.com/62466836/125956119-d3a90e30-2066-415e-b1e5-89963969b8b7.png)
 
-Team Members:Shreya Sajal,Vineet Agarwal,Saman Ghous,Siddharth Shankar Pandey,Rishika Patwa
+Project By: Saman Ghous 
 
-Project-Deployment: https://predictin-deployment.herokuapp.com/![Screenshot from 2021-07-16 18-59-26]
+Project-Deployment: https://cbsportal.herokuapp.com/
 
 
 ## Aim:
-Often important linkedin posts by organizations don’t get the required reach due to poor post designing or use of inaccurate community hashtags.Our project, PredictIn aims at solving this problem by predicting reach i.e total impressions in linkedin community for a post beforehand and help the organizations in designing posts in an effective way that maximizes their reach .
+Sometimes Feedbacks and complaints of hostel boarders get unnoticed in normal mail based complaining to various secretaries.
+This webpage gives a portal to boarders to book and also see their past complaints/feedbacks.
+Complaints/feedbacks database is very helpful for respective secretaries to take action and draw conclusions.
 
 # DEMO
 
-https://user-images.githubusercontent.com/58565264/119225905-1cb87700-bb24-11eb-9e4d-6d417cd7c9e8.mp4
+https://user-images.githubusercontent.com/62466836/125961063-12cce579-6854-4ffc-9a27-f87532d0542c.mp4
+       
+## Technologies used:
+* Django Framework,Bootstrap,Css,HTML,Heroku,PostgreSQL 
 
-## Data:
-* The data has been obtained by scraping the linkedin pages of companies and influencers.Information like Number of followers,company size,post content,number of likes,number of comments,comments’ content,etc are being used as the features.
-* We have used selenium and beautifulsoup for scraping 
 
-
-## Working Approach:
-* After the data was collected major variables which could affect post's reach was then shortlisted and processed. 
- 
-* The most suitable Machine learning model which was votingRegressor i.e combination of various regressor, with proper hyperparameter tuning was then used to fit our training set and used to predict the reach of any test post.
- 
-* The model was then deployed.
+## Working Approach of project:
+* Webpage frontend was designed using bootstrap,Css ,Html. 
+* Django Framework was initialized with settings.py configured. 
+* Various classes was made in models,py  for each forms and user data ,also database was changed to postgresql from sqlite3.
+* Website was then deployed using heroku.
