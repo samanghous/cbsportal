@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/cssFolder/common.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <!-- google font -->
+    <title>BARAK CBS</title>
+
+    <script>
+    history.pushState(null, null, null);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, null);
+    });
+    </script>
+
+
+
+</head>
+
+<body style="font-family: 'Noto Sans JP', sans-serif;">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">HOME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        OTHERS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" target="_blank">BARAK HOSTEL</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://www.iitg.ac.in/cb/" target="_blank">INTRANET/LAN</a>
+                        <a class="dropdown-item" href="https://intranet.iitg.ernet.in/ipm/complaint/"
+                            target="_blank">CBS</a>
+                        <a class="dropdown-item" href="https://www.iitg.ac.in/stud/gymkhana/hostelBoard/hab.html"
+                            target="_blank">HAB</a>
+                        <a class="dropdown-item" href="https://www.iitg.ac.in/" target="_blank">IITG</a>
+                    </div>
+                </li>
+            </ul>
+            <div style="color:#b8bdc2;"> 
+                <div  class="row">
+                {% block welcomeuser %}
+                {% endblock welcomeuser %} 
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVIGATION BAR -->
+
+    {% block dismissable_msg %}
+    {% endblock dismissable_msg %}
+
+    <!-- main -->
+    <main>
+        <!-- sliding -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="../static/pic1.jpg" alt="First slide" style="width:100%;height:420px">
+                    <div class="container">
+                        <div class="carousel-caption text-left"
+                            style="background-color:rgba(136,136,136,0.6);padding:12px">
+                            <h3> Visit the hmc website of Barak hostel </h3>
+                            <p> Barak is the 7th hostel in the IITG fraternity and derives its name from the River Barak
+                                which is a major river in north-eastern India and is a part of the Surma-Meghna River
+                                System. </p>
+                            <p><a class="btn btn btn-primary" href="#" role="button" target="_blank">visit</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src="../static/pic2.jpeg" alt="Second slide"
+                        style="width:100%;height:420px">
+                    <div class="container">
+                        <div class="carousel-caption" style="background-color:rgba(136,136,136,0.6);padding:12px">
+                            <h3> Visit the intranet website of main IITG CBS Portal </h3>
+                            <p> Complaint booking system is deployed to address any primary issue related to intranet, lan, plumbing, carpentary, electricity, sanitation</p>
+                            <p>
+                                <a class="btn btn btn-primary mb-1" href="https://www.iitg.ac.in/cb/" role="button"
+                                    target="_blank">Lan / Intranet</a>
+                                <a class="btn btn btn-primary" href="https://intranet.iitg.ernet.in/ipm/complaint/"
+                                    role="button" target="_blank">General CBS</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide" src="../static/pic3.jpg" alt="Third slide" style="width:100%;height:420px">
+                    <div class="container">
+                        <div class="carousel-caption text-right"
+                            style="background-color:rgba(136,136,136,0.6);padding:12px">
+                            <h3> Contacts directory</h3>
+                            <p> contact list of major centers, departments, utility services</p>
+                            <p><a class="btn btn btn-primary" href="http://www.iitg.ac.in/phones/" role="button"
+                                    target="_blank">Visit</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- sliding -->
+
+        <div class="container-fluid" style="text-align: center;">
+            <div class="row justify-content-around">
+                <div class="col-md-8 my-3 mx-2 px-0 py-0">
+                    <div class="my-0 mx-0 py-3 px-3" style="background-color: #e7eaed;border-radius:10px;">
+                        {% block login_register_area %}
+                        {% endblock login_register_area %}
+                    </div>
+                </div>
+                <div class="col-md-3 my-3 mx-2 py-3 px-2 " style="background-color: #e7eaed;border-radius:10px;">
+                     
+                    {% block news_events %}
+                    {% endblock news_events %}
+
+                     
+                    {% block user_info %}
+                    {% endblock user_info %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <!-- main -->
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark "
+        style="background-color: #33383f;color:#6d7b8e;padding:10px">
+
+        <div style="opacity:0;transition:opacity 2s;">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold">Barak Hostel Complaint Portal</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p> All minor complaints must initially be registered at cbs portal IITG or cbs barak webpage.
+                        </p>
+                        <p> In case of urgent complaints like broken tap,leaking pipe,short circuit etc kindly call
+                            Maintenance Secretary, Barak Hostel and inform security </p>
+                        <p><i class="fas fa-phone mr-3"></i> Maintenance Secretary- +91-99999-99999 </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                        <hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a href="https://www.iitg.ac.in/stud/gymkhana/hostelBoard/hab.html" target="_blank"
+                                style="color:#6d7b8e;text-decoration: none" onMouseOver="this.style.color='white'"
+                                onMouseOut="this.style.color='#6d7b8e' ">Hab IITG</a>
+                        </p>
+                        <p>
+                            <a href="https://www.iitg.ac.in/iitg_section?section=student-s-affairs" target="_blank"
+                                style="color:#6d7b8e;text-decoration: none" onMouseOver="this.style.color='white'"
+                                onMouseOut="this.style.color='#6d7b8e' ">Student Affairs</a>
+                        </p>
+                        <p>
+                            <a href="http://www.iitg.ac.in/acad/" target="_blank"
+                                style="color:#6d7b8e;text-decoration: none" onMouseOver="this.style.color='white'"
+                                onMouseOut="this.style.color='#6d7b8e' ">Academic Affairs</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a href="https://www.facebook.com/barakhostel/" target="_blank"
+                                style="color:#6d7b8e;text-decoration: none" onMouseOver="this.style.color='white'"
+                                onMouseOut="this.style.color='#6d7b8e'"><i
+                                    class="fab fa-lg fa-facebook-f white-text mr-4">
+                                </i> Our Facebook page </a>
+                        </p>
+                        <p><i class="fas fa-home mr-3"></i> Barak Office, IIT Guwahati, Kamrup, Assam</p>
+                        <p><i class="fas fa-envelope mr-3"></i> barakoff@iitg.ac.in</p>
+                        <p><i class="fas fa-phone mr-3"></i> Barak Caretaker- 2789 </p>
+                        <p><i class="fas fa-phone mr-3"></i> Barak Security- 2788 </p>
+                        <p><i class="fas fa-phone mr-3"></i> Barak Warden- 2790 </p>
+                        <p><i class="fas fa-phone mr-3"></i> Barak Assoc. Warden- 2634 </p>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2021 Copyright: Saman Ghous- Maintenance Secretary,Barak
+                Hostel
+            </div>
+            <!-- Copyright -->
+
+        </div>
+
+    </footer>
+    <!-- Footer -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).scroll(function () {
+
+            if ($(window).scrollTop() + $(window).height() > $("footer").offset().top) {
+                $("footer > div").css("opacity", "1");
+
+            } else if ($(window).scrollTop() + $(window).height() < $("footer").offset().top) {
+                $("footer > div").css("opacity", "0");
+            }
+
+
+        });
+    </script>
+</body>
+
+
+
+</html>

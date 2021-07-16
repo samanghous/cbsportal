@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block dismissable_msg %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock dismissable_msg %}
+
+
+{% block welcomeuser %}
+<h6 class="my-auto px-3" >
+Welcome! User
+</h6>
+{% endblock welcomeuser %}
+
+
+ 
+{% if   newsevents   %}
+{% block news_events %}
+<h5 class="mt-3"><strong>Recent Events</strong></h5>
+{% for record in newsevents %}
+    <div style="border:1px dotted black;" class="mx-2 my-2 py-2">
+        <h6><strong>Date :</strong> {{record.date}}</h6>
+        <h6><strong>Event Name :</strong> {{record.event}}</h6>
+        <h6><strong>Details :</strong> {{record.details}}</h6>
+    </div>
+{% endfor %}
+{% endblock news_events %}
+{% endif %}
+ 
+ 
+
+{% block login_register_area %}
+<div class="container mt-2 mb-4">
+	<div class="col-sm-8 ml-auto mr-auto">	
+		<ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+			<li class="nav-item"> <a style="border-radius:10px" class="nav-link active" id="pills-signup-tab" data-toggle="pill" href="#pills-signup"
+					role="tab" aria-controls="pills-signup" aria-selected="true">Sign Up</a> </li>
+			<li class="nav-item"> <a style="border-radius:10px" class="nav-link" id="pills-signin-tab" data-toggle="pill"
+					href="#pills-signin" role="tab" aria-controls="pills-signin" aria-selected="false">Sign In</a> </li>
+		</ul>
+		<div class="tab-content" id="pills-tabContent" style="background-color:white;border-radius:20px;">
+			<div class="tab-pane fade show active" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
+				<div class="col-sm-12 py-4">
+					<div class="text-center "><img src="../static/user.jpeg" class="rounded-circle border p-1 mb-4" style="width:60px;height:60px">
+					</div>
+					<!--otp generation form-->
+					<form class="mb-5" method="post" id="securitykeyform"  action="/securitykeygenerate">
+						{% csrf_token %}
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">Email <span class="text-danger">*</span></label>
+								<input type="email" name="signupemail" id="signupemail" class="form-control"
+									placeholder="Enter valid email" required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-6">
+								<input type="submit" name="signupsubmit" value="Generate security key"
+									class="btn btn-block btn-primary">
+							</div>
+						</div>
+					</form>
+					<!-- sign up form -->
+					<form method="post" id="singnupFrom"  action="#">
+						{% csrf_token %}
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">Email <span class="text-danger">*</span></label>
+								<input type="email" name="signupemail" id="signupemail" class="form-control"
+									placeholder="Enter valid email" required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">User Name <span class="text-danger">*</span></label>
+								<input type="text" name="signupusername" id="signupusername" class="form-control"
+									placeholder="Choose your user name" required>
+								<div class="text-danger"><em>This will be your login name!</em></div>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">Password <span class="text-danger">*</span></label>
+								<input type="password" name="signuppassword" id="signuppassword" class="form-control"
+									placeholder="***********" pattern="^\S{6,}$"
+									onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"
+									required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">Confirm Password <span
+										class="text-danger">*</span></label>
+								<input type="password" name="signupcpassword" id="signupcpassword" class="form-control"
+									pattern="^\S{6,}$"
+									onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
+									placeholder="***********" required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold"> Securitykey sent to your email <span class="text-danger">*</span></label>
+								<input type="number" name="securitykey" id="securitykey" class="form-control"
+									placeholder="Enter Securitykey" required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-4">
+								<input type="submit" name="signupsubmit" value="Sign Up"
+									class="btn btn-block btn-primary">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab">
+				<div class="col-sm-12 py-4">
+					<div class="text-center "><img src="../static/user.jpeg" class="rounded-circle border p-1 mb-4" style="width:60px;height:60px">
+					</div>
+					<!-- sign in form -->
+					<form method="post" id="singninFrom"  action="/afterlogin" >
+						{% csrf_token %}
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">User Name <span class="text-danger">*</span></label>
+								<input type="text" name="uname" id="uname" class="form-control"
+									placeholder="Choose your user name" required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<label class="font-weight-bold">Password <span class="text-danger">*</span></label>
+								<input type="password" name="password" id="password" class="form-control"
+									placeholder="*********" required>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-8">
+								<div class="row">
+									<div class="col text-right"> <a href="javascript:;" data-toggle="modal"
+											data-target="#forgotPass">Forgot Password?</a> </div>
+								</div>
+							</div>
+						</div>
+						<div class="form-row my-2 justify-content-center">
+							<div class="form-group col-md-4">
+								<input type="submit" name="submit" value="Sign In" class="btn btn-block btn-primary">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="forgotPass" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<form method="post" id="forgotpassForm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Forgot Password</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+								aria-hidden="true">&times;</span> </button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Email <span class="text-danger">*</span></label>
+							<input type="email" name="forgotemail" id="forgotemail" class="form-control"
+								placeholder="Enter your valid email..." required>
+						</div>
+						<div class="form-group">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Sign In</button>
+						<button type="submit" name="forgotPass" class="btn btn-primary"><i class="fa fa-envelope"></i>
+							Send Request</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock login_register_area %}
